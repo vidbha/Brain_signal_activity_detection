@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Results</title>
+    <style>
+        .container {
+            width: 50%; /* Adjust the width as needed */
+            margin: 0 auto; /* Set left and right margins to auto to center-align the container */
+            text-align: center; /* Center-align text within the container */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #040231e3;"><u><i>Prediction Result</i></u></h1>
+        <p style="color: #040231e3;">Seizure Vote: {{ pred_results.Seizure_vote }}</p>
+        <p style="color: #040231e3;">LPD Vote: {{ pred_results.LPD_vote }}</p>
+        <p style="color: #040231e3;">GPD Vote: {{ pred_results.GPD_vote }}</p>
+        <p style="color: #040231e3;">LRDA Vote: {{ pred_results.LRDA_vote }}</p>
+        <p style="color: #040231e3;">GRDA Vote: {{ pred_results.GRDA_vote }}</p>
+        <p style="color: #040231e3;">Other Vote: {{ pred_results.Other_vote }}</p>
+        
+    </div>
+</body>
+</html>
