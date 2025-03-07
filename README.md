@@ -1,59 +1,66 @@
-EEG Spectrogram Classification Project
-This repository contains the code and resources for an EEG spectrogram classification project that leverages a pre-trained efficientnetv2_b2_imagenet. The project converts raw EEG signals into spectrograms, processes and augments the data, trains a deep learning model, and finally deploys a web application for inference.
+📌 EEG Spectrogram Classification Project
+A deep learning-based approach to classify harmful brain activities using EEG spectrograms. This project processes EEG signals, converts them into spectrograms, and fine-tunes a pre-trained EfficientNetV2 model to make predictions. A Django-based web application is included for real-time inference.
 
-Overview
-The aim of this project is to classify harmful brain activities by processing EEG data into spectrogram images and training a deep learning model using transfer learning. The approach includes:
+🚀 Project Overview
+✅ Data Preprocessing: Converts raw EEG signals (.parquet files) into spectrogram images.
+✅ Data Augmentation: Implements MixUp and Random Cutout to improve model generalization.
+✅ Model Training: Fine-tunes a EfficientNet model with a custom learning rate schedule and KL-Divergence loss.
+✅ Web Application: Deploys a Django-based web app for model inference.
 
-Data Preprocessing: Converting EEG signals from Parquet files into spectrogram images.
-Data Augmentation: Using techniques such as MixUp and Random Cutout to improve model generalization.
-Model Training: Fine-tuning a pre-trained ResNet50 model with a custom learning rate schedule and KL-Divergence loss.
-Web Application: A Django-based web app to visualize and deploy model predictions.
-Directory Structure
-graphql
-Copy
-Edit
-.
-├── best_model.keras                # Saved model file for the best performing model.
-├── sample_submission (1).csv        # Example submission file template.
+📁 Directory Structure
+EEG-Spectrogram-Classification/
+├── best_model.keras                # Trained deep learning model.
+├── sample_submission.csv            # Example submission template.
 ├── test.csv                         # Test dataset details.
-├── uploads.npy                      # Numpy file for uploads or processed data.
+├── uploads.npy                      # Processed EEG data stored in numpy format.
 │
-├── data                             # Contains raw EEG data files in .parquet format.
-│   ├── 1a5ba1f4-ac78-4bdc-91df-26b3a3bcc636.parquet
-│   ├── 437d4faa-fd4b-4d44-9405-04c2e863c82d.parquet
-│   └── ... (additional .parquet files)
+├── data/                            # Raw EEG data files in .parquet format.
+│   ├── 1a5ba1f4.parquet
+│   ├── 437d4faa.parquet
+│   └── ... (more EEG data files)
 │
-├── templates                        # HTML and image files for the web interface.
+├── templates/                        # Web interface files.
 │   ├── input.html
-│   └── predict.html
+│   ├── predict.html
 │
-├── uploads                          # Directory for additional upload files and results.
+├── uploads/                          # Directory for uploaded EEG files & results.
 │   ├── 1000317312.parquet
 │   ├── 1000493950.parquet
-│   └── __results___25_0.png         # Example output image file.
+│   └── __results___25_0.png         # Example output image.
 │
-└── webapp                           # Django web application for model deployment.
-    └── hms_project
-        ├── COMParison.ipynb         # Jupyter notebook for model comparison and analysis.
-        ├── db.sqlite3               # SQLite database file for Django.
+└── webapp/                           # Django web application for deployment.
+    └── hms_project/
+        ├── COMParison.ipynb         # Model comparison & analysis.
+        ├── db.sqlite3               # SQLite database for Django.
         ├── manage.py                # Django management script.
         │
-        ├── hms_detection            # Main Django app for EEG detection.
+        ├── hms_detection/           # Main Django app for EEG detection.
         │   ├── admin.py
         │   ├── apps.py
         │   ├── models.py
         │   ├── views.py
         │   └── ... (other Django files)
         │
-        └── hms_project              # Django project settings.
-            ├── asgi.py
-            ├── settings.py          # Configuration settings for the project.
-            ├── urls.py              # URL routing for the project.
+        └── hms_project/             # Django project settings.
+            ├── settings.py
+            ├── urls.py              # Routing for the application.
             ├── wsgi.py
-            └── ... (additional configuration files)
-Requirements
-Python 3.x
-Keras, TensorFlow or JAX (as backend)
-Pandas, NumPy, OpenCV
-Joblib, tqdm, Matplotlib
-Django (for the web application)
+📦 Installation & Setup
+1️⃣ Install Required Packages
+Ensure Python 3.x is installed, then install dependencies:
+pip install tensorflow keras pandas numpy opencv-python joblib tqdm matplotlib django
+2️⃣ Set Up the Django Web App
+cd webapp
+python manage.py migrate
+python manage.py runserver
+The application will start at http://127.0.0.1:8000/. Open this URL in a browser.
+
+🔗 API Endpoints
+Endpoint	Description
+/	Renders the web dashboard.
+/predict	Accepts an EEG spectrogram file and returns the classification result.
+🔮 Future Enhancements
+✅ Experiment with Vision Transformers (ViTs) for better feature extraction.
+✅ Implement real-time EEG data streaming & inference.
+✅ Enhance the web interface with better visualization tools.
+✅ Deploy the model using Docker & cloud services (AWS, GCP, or Azure).
