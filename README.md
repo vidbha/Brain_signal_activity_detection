@@ -15,8 +15,6 @@ A deep learning-based approach to classify harmful brain activities using EEG sp
 ```
 EEG-Spectrogram-Classification/
 ├── best_model.keras           # Trained deep learning model.
-├── sample_submission.csv      # Example submission template.
-├── test.csv                   # Test dataset details.
 ├── uploads.npy                # Processed EEG data stored in numpy format.
 │
 ├── data/                      # Raw EEG data files in .parquet format.
