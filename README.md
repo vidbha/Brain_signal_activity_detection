@@ -71,6 +71,11 @@ The application will start at `http://127.0.0.1:8000/`. Open this URL in a brows
 | `/predict`  | Accepts an EEG spectrogram file and returns the classification result. |
 
 ---
+## Demo Pictures
+![image](https://github.com/user-attachments/assets/a09bbca4-f593-4ab1-b1f0-6dd4da50a07c)
+
+![image](https://github.com/user-attachments/assets/86ee6696-f07d-41d2-b502-9c5a9b2934c3)
+
 
 ## 🔮 Future Enhancements
 ✅ Experiment with Vision Transformers (ViTs) for better feature extraction.  
